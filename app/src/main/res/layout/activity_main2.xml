@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3f3d56"
+            android:fontFamily="@font/gilroy_bold"
+            android:padding="10dp"
+            android:text="cutt.ly"
+            android:textColor="@color/orange"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:paddingTop="35dp"
+            android:src="@drawable/ic_url_short"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView1"
+            >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="35dp"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="Enter URL"
+                android:textColor="#3f3d56"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView1" />
+
+            <EditText
+                android:id="@+id/et_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/etbg"
+                android:ems="10"
+                android:fontFamily="@font/gilroy_medium"
+                android:inputType="textPersonName"
+                android:padding="15dp"
+                android:textColor="#3f3d56"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+          <!--  <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/buttonbg"
+                android:fontFamily="@font/gilroy_bold"
+                android:paddingHorizontal="25dp"
+                android:paddingVertical="8dp"
+                android:text="Shorten"
+                android:layout_gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="16sp" /> -->
+
+            <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                android:id="@+id/btn_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Shorten"
+                android:fontFamily="@font/gilroy_bold"
+                android:paddingHorizontal="35dp"
+                android:paddingVertical="8dp"
+                android:layout_gravity="center_horizontal"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="17sp"
+                android:layout_marginBottom="5dp"
+                app:spinning_bar_color="#FFF"
+                android:background="@drawable/buttonbg" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:paddingVertical="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button">
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginVertical="4dp"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="Generated URL: "
+                    android:textColor="#3f3d56"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tv_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_below="@id/tv"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/etbg"
+                    android:ems="10"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:padding="15dp"
+                    android:textColor="#3f3d56"
+                    android:textSize="17sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/tv_url"
+                    android:layout_centerHorizontal="true">
+                    <Button
+                        android:id="@+id/btn_copy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Copy"
+                        android:textColor="#fff"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginBottom="10dp"
+                        android:drawableLeft="@drawable/copy_icon"
+                        android:background="@drawable/button"
+                        android:textAllCaps="false"
+                        android:drawablePadding="4dp"
+                        android:fontFamily="@font/gilroy_bold"/>
+
+                    <Button
+                        android:id="@+id/btn_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button"
+                        android:paddingHorizontal="16dp"
+                        android:drawableLeft="@drawable/share_icon"
+                        android:textColor="#fff"
+                        android:drawablePadding="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/gilroy_bold"
+                        android:text="Share"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
